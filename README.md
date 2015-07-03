@@ -1,4 +1,3 @@
-// En el informe no tiene claridad en lo que presenta es necesario mostrar el acumulado de lo que lleva el negocio acumulado( osea el total de ganancias del local?)
 //Al crear cargo que menus quedan creados para el cargo(eso no tiene nada que ver con los cargos)(se crean los usuarios master que soliciten y los demas son operarios)
 //manual tecnico(A)(se deja comentariado el codigo al final para no realizar este)
 
@@ -14,6 +13,7 @@
 //No aparece el boton prestamo(ok)
 //No toma la tabla para la opcion show en facturay no carga el icono para el boton pdf(ok)
 //Incluir en la factura el nombre de la persona que lo atendio(ok)
+// En el informe no tiene claridad en lo que presenta es necesario mostrar el acumulado de lo que lleva el negocio acumulado( osea el total de ganancias del local?)(ok total facturas diarias)
 
 
 

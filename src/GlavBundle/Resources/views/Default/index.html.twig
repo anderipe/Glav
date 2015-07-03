@@ -151,10 +151,18 @@
 					<p>Rubros</p>
                 <span class="badge">{{ rubro }}</span>
 				</a>
+                
+                {% set diario = 0 %}
+
+                   {% for neto in total %}
+                         {% set diario = diario + neto.total  %}
+
+		            {% endfor %}
+
 
                 <a class="quick-button metro pink span2">
 					<i class="icon-envelope"></i>
-					<p>Facturas</p>
+					<p>Facturas {{ diario }}</p>
 					<span class="badge">{{ factura }}</span>
 				</a>
             

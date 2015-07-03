@@ -50,12 +50,18 @@ class DefaultController extends Controller
         $con->execute();
         $empleado = $con->fetchAll(); 
         
+        $sqlFacturaTotal = "select (r.valor*0.6) as total from Servicio s
+inner join Rubro r on r.id = s.id_rubro
+where s.fecha_servicio >= CURDATE()";
+         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sqlFacturaTotal);
+        $con->execute();
+        $total = $con->fetchAll(); 
         
-        
+        //print_r($total);exit();
         
         
         
         return $this->render('GlavBundle:Default:index.html.twig', array(
-            'entities' => $entities,'cliente' => $cliente,'empleado'=>$empleado,'rubro'=>$rubro,'factura'=>$factura,'automotor'=>$automotor));
+            'entities' => $entities,'cliente' => $cliente,'empleado'=>$empleado,'rubro'=>$rubro,'factura'=>$factura,'automotor'=>$automotor,'total'=>$total));
     }
 }
