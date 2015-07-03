@@ -21,9 +21,11 @@ class CargoController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('GlavBundle:Cargo')->findAll();
+//         $em = $this->getDoctrine()->getManager();
+//         $entities = $em->getRepository('GlavBundle:Cargo')->findAll();
+        
+        $em = $this->getDoctrine()->getManager()->getRepository('GlavBundle:Cargo');
+        $entities = $em->findCargo();
         
         $breadcrumb = $this->generateUrl('cargo');
 
@@ -200,7 +202,9 @@ class CargoController extends Controller
                 throw $this->createNotFoundException('Unable to find Cargo entity.');
             }
 
-            $em->remove($entity);
+            //$em->remove($entity);
+            $entity->setEstado('0');
+            $em->persist($entity);
             $em->flush();
         }
 

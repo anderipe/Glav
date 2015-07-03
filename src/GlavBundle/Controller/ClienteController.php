@@ -198,7 +198,9 @@ class ClienteController extends Controller
                 throw $this->createNotFoundException('Unable to find Cliente entity.');
             }
 
-            $em->remove($entity);
+            //$em->remove($entity);
+            $entity->setEstado('0');
+            $em->persist($entity);
             $em->flush();
         }
 

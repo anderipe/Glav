@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class EmpleadoRepository extends EntityRepository
 {
+    public function findEmpleado()
+    {
+        $qb = $this->createQueryBuilder('e')->where('(e.estado = 1)');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
 }

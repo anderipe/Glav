@@ -4,7 +4,7 @@ namespace GlavBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use GlavBundle\Entity\EmpleadoRepository;
 use GlavBundle\Entity\Empleado;
 use GlavBundle\Form\EmpleadoType;
 
@@ -21,9 +21,11 @@ class EmpleadoController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        //$em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager()->getRepository('GlavBundle:Empleado');
+        $entities = $em->findEmpleado();
 
-        $entities = $em->getRepository('GlavBundle:Empleado')->findAll();
+        //$entities = $em->getRepository('GlavBundle:Empleado')->findAll();
 
         return $this->render('GlavBundle:Empleado:index.html.twig', array(
             'entities' => $entities,
@@ -198,7 +200,10 @@ class EmpleadoController extends Controller
                 throw $this->createNotFoundException('Unable to find Empleado entity.');
             }
 
-            $em->remove($entity);
+            //$em->remove($entity);
+            $entity->setEstado('0');
+            $em->persist($entity);
+
             $em->flush();
         }
 

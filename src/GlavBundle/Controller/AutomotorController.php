@@ -21,10 +21,15 @@ class AutomotorController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        //$em = $this->getDoctrine()->getManager();
 
         //$entities = $em->getRepository('GlavBundle:Automotor')->findAll();
-        $entities = $em->getRepository('GlavBundle:Automotor')->findBy(array('estado'=> '1'));
+        //$entities = $em->getRepository('GlavBundle:Automotor')->findBy(array('estado'=> '1'));
+        
+        $em = $this->getDoctrine()->getManager()->getRepository('GlavBundle:Automotor');
+        $entities = $em->findAutomotor();
+        
+        
         return $this->render('GlavBundle:Automotor:index.html.twig', array(
             'entities' => $entities,
         ));

@@ -204,7 +204,9 @@ class ServicioController extends Controller
                 throw $this->createNotFoundException('Unable to find Servicio entity.');
             }
 
-            $em->remove($entity);
+            //$em->remove($entity);
+            $entity->setEstado('0');
+            $em->persist($entity);
             $em->flush();
         }
 

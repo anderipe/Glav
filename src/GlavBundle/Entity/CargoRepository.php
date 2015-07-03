@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class CargoRepository extends EntityRepository
 {
+    public function findCargo()
+    {
+        $qb = $this->createQueryBuilder('ca')->where('(ca.estado = 1)');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
 }

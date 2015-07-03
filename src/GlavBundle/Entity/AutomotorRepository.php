@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class AutomotorRepository extends EntityRepository
 {
+    public function findAutomotor()
+    {
+        $qb = $this->createQueryBuilder('a')->where('(a.estado = 1)');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
 }
