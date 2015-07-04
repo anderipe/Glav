@@ -23,7 +23,7 @@ class TipoRubroController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('GlavBundle:TipoRubro')->findAll();
+        $entities = $em->getRepository('GlavBundle:TipoRubro')->findTipoRubro();
 
         return $this->render('GlavBundle:TipoRubro:index.html.twig', array(
             'entities' => $entities,

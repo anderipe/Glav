@@ -28,21 +28,23 @@
                                      
   {% elseif is_granted("ROLE_USER") %}  
   
-    <ul class="nav nav-tabs nav-stacked main-menu">
-
+                   <ul class="nav nav-tabs nav-stacked main-menu">
+            <li><a href="{{path('empleado')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Empleado</span></a></li>	
             <li><a href="{{path('cliente')}}"><i class="icon-user"></i><span class="hidden-tablet"> Cliente</span></a></li>
+            <li><a href="{{path('rubro')}}"><i class="icon-list"></i><span class="hidden-tablet"> Servicios</span></a></li>
             <li><a href="{{path('automotor')}}"><i class="icon-road"></i><span class="hidden-tablet"> Automotor</span></a></li>
-            <li><a href="{{path('servicio')}}"><i class="icon-inbox"></i><span class="hidden-tablet"> Servicio</span></a></li>	   
-            <li>
+            <li><a href="{{path('servicio')}}"><i class="icon-inbox"></i><span class="hidden-tablet">Registrar Servicio</span></a></li>	
+                           
+            <li><a href="{{path('factura')}}"><i class="icon-envelope"></i><span class="hidden-tablet"> Facturas</span></a></li>
+           <li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Informes</span><span class="label label-important"> 3 </span></a>
 							<ul>
 								<li><a class="submenu" href="{{path('informe')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Empleados</span></a></li>
-								<li><a class="submenu" href="{{path('semanal_empleado')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Pagos Semana</span></a></li>
 								<li><a class="submenu" href="{{path('excel')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Excel </span></a></li>
 							</ul>	
 						</li>
-
-					</ul>
+ 
+            		</ul>
   
   {% else %}  
   

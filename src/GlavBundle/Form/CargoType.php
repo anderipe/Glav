@@ -18,7 +18,7 @@ class CargoType extends AbstractType
            // ->add('hash')
             ->add('nombre')
             ->add('descripcion')
-            ->add('estado')
+            //->add('estado')
             ->add('fecha')
         ;
     }

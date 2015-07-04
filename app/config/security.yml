@@ -30,6 +30,10 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/empleado/, role: ROLE_SUPER_ADMIN }
+        - { path: ^/tipoautomotor/, role: ROLE_SUPER_ADMIN }
+        - { path: ^/informe/semanal, role: ROLE_SUPER_ADMIN }
+        - { path: ^/tiporubro/, role: ROLE_SUPER_ADMIN }
+        - { path: ^/prestamo/, role: ROLE_SUPER_ADMIN }
+
         #- { path: ^/cliente/, role: ROLE_USER }
 

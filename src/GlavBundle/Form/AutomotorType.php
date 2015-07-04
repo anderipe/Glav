@@ -15,12 +15,14 @@ class AutomotorType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hash')
+            //->add('hash')
             ->add('modelo')
             ->add('matricula')
-            ->add('estado')
-            ->add('fecha')
-            ->add('id_tipo_automotor')
+            //->add('estado')
+            //->add('fecha')
+            ->add('id_tipo_automotor', 'entity', 
+                  array('label' => 'Tipo de Automotor',
+                        'class'    => 'GlavBundle:TipoAutomotor'))
         ;
     }
     

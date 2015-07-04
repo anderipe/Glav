@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class ClienteRepository extends EntityRepository
 {
+    public function findCliente()
+    {
+        $qb = $this->createQueryBuilder('c')->where('(c.estado = 1)');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
 }

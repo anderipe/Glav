@@ -31,6 +31,7 @@ class PrestamoType extends AbstractType
             //'multiple' => true,
             'class'    => 'GlavBundle:Empleado',
             'property' => 'label',
+            'label' => 'Empleado',
             'attr' => array('data-rel'=>'chosen'),
             ))
             ->add('valor','integer')

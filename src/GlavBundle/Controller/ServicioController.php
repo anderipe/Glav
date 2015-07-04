@@ -22,7 +22,7 @@ class ServicioController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $sql = "select s.id , a.modelo , a.matricula ,concat(e.nombre,' ',e.apellido )as empleado ,s.estado_servicio,s.fecha_servicio,s.fecha_entrega, s.observacion,s.pago from Servicio s inner join Automotor a on a.id=s.id_automotor inner join Empleado e on e.id=s.id_empleado";
+        $sql = "select s.id , a.modelo , a.matricula ,concat(e.nombre,' ',e.apellido )as empleado ,s.estado_servicio,s.fecha_servicio,s.fecha_entrega, s.observacion,s.pago from Servicio s inner join Automotor a on a.id=s.id_automotor inner join Empleado e on e.id=s.id_empleado where s.estado = 1";
 
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
         $con->execute();

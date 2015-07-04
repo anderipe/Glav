@@ -21,9 +21,12 @@ class RubroController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        //$em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('GlavBundle:Rubro')->findAll();
+        //$entities = $em->getRepository('GlavBundle:Rubro')->findAll();
+        //
+        $em = $this->getDoctrine()->getManager()->getRepository('GlavBundle:Rubro');
+        $entities = $em->findRubro();
 
         return $this->render('GlavBundle:Rubro:index.html.twig', array(
             'entities' => $entities,

@@ -26,7 +26,9 @@ class EmpleadoType extends AbstractType
             ->add('email')
             //->add('estado')
             //->add('fecha')
-            ->add('id_cargo')
+            ->add('id_cargo', 'entity', 
+                  array('label' => 'Cargo',
+                        'class'    => 'GlavBundle:Cargo'))
         ;
     }
     

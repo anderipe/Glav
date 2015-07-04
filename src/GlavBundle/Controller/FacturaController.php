@@ -25,7 +25,7 @@ class FacturaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         
-        $sql = "select f.id,f.observacion,f.total,fu.username ,concat(c.nombre,' ',c.apellido) as cliente,f.fecha from Factura f inner join fos_user fu on fu.id = f.id_usuario inner join FacturaDetalle fd on fd.id_factura = f.id inner join Servicio s on s.id = fd.id_servicio inner join Cliente c on c.id = s.id_cliente";
+        $sql = "select f.id,f.observacion,f.total,fu.username ,concat(c.nombre,' ',c.apellido) as cliente,f.fecha from Factura f inner join fos_user fu on fu.id = f.id_usuario inner join FacturaDetalle fd on fd.id_factura = f.id inner join Servicio s on s.id = fd.id_servicio inner join Cliente c on c.id = s.id_cliente where f.estado = 1";
         //echo $sql;exit();   
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
         $con->execute();

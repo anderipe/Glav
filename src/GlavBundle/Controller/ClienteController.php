@@ -21,9 +21,11 @@ class ClienteController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('GlavBundle:Cliente')->findAll();
+        //$em = $this->getDoctrine()->getManager();
+        //$entities = $em->getRepository('GlavBundle:Cliente')->findAll();
+        
+        $em = $this->getDoctrine()->getManager()->getRepository('GlavBundle:Cliente');
+        $entities = $em->findCliente();
 
         return $this->render('GlavBundle:Cliente:index.html.twig', array(
             'entities' => $entities,

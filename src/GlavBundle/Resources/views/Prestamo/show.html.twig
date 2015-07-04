@@ -1,6 +1,6 @@
-{% extends '::base.html.twig' %}
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
-{% block body -%}
+{% block infoUserTop %}
     <h1>Prestamo Registrado</h1>
 
     <table class="record_properties">
@@ -10,20 +10,12 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Hash</th>
-                <td>{{ entity.hash }}</td>
-            </tr>
-            <tr>
                 <th>Valor</th>
                 <td>{{ entity.valor }}</td>
             </tr>
             <tr>
                 <th>Observacion</th>
                 <td>{{ entity.observacion }}</td>
-            </tr>
-            <tr>
-                <th>Estado</th>
-                <td>{{ entity.estado }}</td>
             </tr>
             <tr>
                 <th>Fecha</th>

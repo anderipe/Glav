@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class PrestamoRepository extends EntityRepository
 {
+        public function findPrestamo()
+    {
+        $qb = $this->createQueryBuilder('p')->where('(p.estado = 1)');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
 }

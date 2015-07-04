@@ -23,7 +23,7 @@ class TipoAutomotorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('GlavBundle:TipoAutomotor')->findAll();
+        $entities = $em->getRepository('GlavBundle:TipoAutomotor')->findTipoAutomotor();
 
         return $this->render('GlavBundle:TipoAutomotor:index.html.twig', array(
             'entities' => $entities,

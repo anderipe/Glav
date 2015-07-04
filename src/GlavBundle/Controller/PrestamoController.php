@@ -23,11 +23,12 @@ class PrestamoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        //$entities = $em->getRepository('GlavBundle:Prestamo')->findAll();
-        $sql = "select p.* , concat(e.nombre,' ' ,e.apellido) as empleado from Prestamo p 
-                inner join Empleado e on e.id = p.id_empleado";
+        $entities = $em->getRepository('GlavBundle:Prestamo')->findAll();
+        $sql = "select p.* , concat(e.nombre,' ' ,e.apellido) as empleado from Prestamo p      inner join Empleado e on e.id = p.id_empleado where p.estado <> 0";
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
         $con->execute();
+        //$em = $this->getDoctrine()->getManager()->getRepository('GlavBundle:Prestamo');
+        //$entities = $em->findPrestamo();
         $entities = $con->fetchAll(); 
         
 

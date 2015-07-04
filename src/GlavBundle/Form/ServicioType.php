@@ -57,7 +57,7 @@ class ServicioType extends AbstractType
             ))
             ->add('fecha_entrega')
             ->add('observacion')
-            ->add('pago', 'choice', array('choices' => array('Pendiente' => 'Pendiente', 'Pagado' => 'Pagado')))
+            //->add('pago', 'choice', array('choices' => array('Pendiente' => 'Pendiente', 'Pagado' => 'Pagado')))
         ;
     }
     

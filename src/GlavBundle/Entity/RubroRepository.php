@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class RubroRepository extends EntityRepository
 {
+    public function findRubro()
+    {
+        $qb = $this->createQueryBuilder('r')->where('(r.estado = 1)');
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
 }

@@ -19,8 +19,8 @@ class TipoAutomotorType extends AbstractType
           //  ->add('hash')
             ->add('nombre')
             ->add('descripcion')
-            ->add('estado')
-            ->add('fecha')
+            //->add('estado')
+            //->add('fecha')
         ;
     }
     

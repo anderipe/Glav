@@ -1,3 +1,4 @@
+//al momento de crear ekl usuario automaticamente se loguea con este
 //Al crear cargo que menus quedan creados para el cargo(eso no tiene nada que ver con los cargos)(se crean los usuarios master que soliciten y los demas son operarios)
 //manual tecnico(A)(se deja comentariado el codigo al final para no realizar este)
 
@@ -5,7 +6,7 @@
 // la barra de servicios va serdiaria(ok)
 // el excel va tener todos los datos del servicio(ok)
 // consultar factura(ok)
-//Ya se dejo el eliminar en automotor que actualiza el estado
+//Ya se dejo el eliminar en automotor que actualiza el estado(ok todos)
 
 //Generar dos veces la misma factura en una hoja(osea quiere que salga horizontal ? para ahorrar papel)(ok toca oficio)
 //Agregar la placa del vehiculo al informe de excel(ok)
