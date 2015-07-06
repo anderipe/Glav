@@ -84,7 +84,7 @@ class InformeController extends Controller
 //                 WHERE s.fecha_servicio >= curdate() - INTERVAL DAYOFWEEK(curdate())+7 DAY AND s.fecha_servicio < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY 
 //                 and s.estado_servicio = 'Finalizado'";
         
-        $sql="SELECT concat(e.nombre,' ',e.apellido) as empleado ,s.fecha_servicio as fecha ,s.pago,(r.valor * 0.4) as valor,s.pago
+        $sql="SELECT concat(e.nombre,' ',e.apellido) as empleado ,s.fecha_servicio as fecha ,s.pago,(r.valor * 0.4) as valor,s.pago,s.estado as estado
                 FROM Servicio s
                 inner join Empleado e on e.id = s.id_empleado
                  inner join Rubro r on r.id = s.id_rubro
@@ -115,7 +115,7 @@ and s.estado_servicio = 'Finalizado'";
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($servicios);
         $con->execute();
         
-               $sql="SELECT concat(e.nombre,' ',e.apellido) as empleado ,s.fecha_servicio as fecha ,s.pago,(r.valor * 0.4) as valor,s.pago
+               $sql="SELECT concat(e.nombre,' ',e.apellido) as empleado ,s.fecha_servicio as fecha ,s.pago,(r.valor * 0.4) as valor,s.pago , s.estado as estado
                 FROM Servicio s
                 inner join Empleado e on e.id = s.id_empleado
                  inner join Rubro r on r.id = s.id_rubro

@@ -26,12 +26,13 @@ class FacturaDetalleType extends AbstractType
                  //'empty_value' => 'Seleccione el programa',
                  //'mapped' =>    false,
                  //'property_path' => null,
-                 'attr' => array('class'=>'form-control'),
-                 'query_builder' => function(EntityRepository $er){return $er->createQueryBuilder('u')->where('u.estadoServicio LIKE :q')->setParameters(array('q' => '%'.'Finalizado'.'%')); },))
+                 'attr' => array('data-rel'=>'chosen'),
+                 'query_builder' => function(EntityRepository $er){return $er->createQueryBuilder('u')->where('u.estadoServicio LIKE :q and u.estado=1')->setParameters(array('q' => '%'.'Finalizado'.'%')); },))
             //->add('valor')
             //->add('iva')
             //->add('total')
             //->add('estado')
+            ->add('estado', 'choice', array('choices' => array('2' => 'Pagado', '3' => 'Gratis')))
             //->add('fecha')
             //->add('id_factura')
 

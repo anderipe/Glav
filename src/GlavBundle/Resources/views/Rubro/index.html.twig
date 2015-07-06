@@ -17,8 +17,6 @@
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Valor</th>
-                <th>Iva</th>
-                <th>Estado</th>
                 <th>Fecha</th>
                 <th>Actions</th>
             </tr>
@@ -31,8 +29,6 @@
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.descripcion }}</td>
                 <td>{{ entity.valor }}</td>
-                <td>{{ entity.iva }}</td>
-                <td>{{ entity.estado }}</td>
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>

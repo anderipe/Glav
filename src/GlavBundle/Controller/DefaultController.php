@@ -52,7 +52,7 @@ class DefaultController extends Controller
         
         $sqlFacturaTotal = "select (r.valor*0.6) as total from Servicio s
 inner join Rubro r on r.id = s.id_rubro
-where s.fecha_servicio >= CURDATE()";
+where s.fecha_servicio >= CURDATE() and r.estado=2";
          $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sqlFacturaTotal);
         $con->execute();
         $total = $con->fetchAll(); 

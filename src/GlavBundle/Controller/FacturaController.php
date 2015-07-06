@@ -248,7 +248,7 @@ class FacturaController extends Controller
         $valor = $servicio->getIdRubro()->getValor();
         $neto = $valor * 0.84;
         //echo $neto;exit();
-        $valor= 'Neto<br><input type="text" id="neto" value="'.$neto.'"><br>Total<br><input type="text" id="total" value="'.$valor.'">';
+        $valor= 'Neto<br><input type="text" id="neto" value="'.$neto.'" readonly><br>Total<br><input type="text" id="total" value="'.$valor.'" readonly>';
         echo $valor;exit();
         
 
@@ -261,6 +261,9 @@ class FacturaController extends Controller
     
     public function guardarFacturaAction(Request $datos)
     {
+        //echo $datos->get('glavbundle_facturadetalle')['estado'];exit();
+        //$request->request->get('acme_demobundle_usertype')['username'];
+
         if($datos->isMethod('POST')){
         
             $em = $this->getDoctrine()->getManager();
@@ -279,6 +282,9 @@ class FacturaController extends Controller
             $factura->setValor($valor);
             $factura->setTotal($valor);
             $em->persist($factura);
+            $em->flush();
+            $servicio->setEstado($datos->get('glavbundle_facturadetalle')['estado']);
+            $em->persist($servicio);
             $em->flush();
             //Se guarda el objeto de FacturaDetalle
             //$idFactura = $factura->getId();

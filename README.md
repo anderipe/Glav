@@ -1,3 +1,4 @@
+//debe desaparecer el servicio al momento de facturarse
 //al momento de crear ekl usuario automaticamente se loguea con este
 //Al crear cargo que menus quedan creados para el cargo(eso no tiene nada que ver con los cargos)(se crean los usuarios master que soliciten y los demas son operarios)
 //manual tecnico(A)(se deja comentariado el codigo al final para no realizar este)

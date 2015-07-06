@@ -16,6 +16,8 @@
                 <th>Pago</th>
                 <th>Valor</th>
                 <th>Estado</th>
+                <th>Servicio</th>
+
 
             </tr>
         </thead>
@@ -33,7 +35,14 @@
                 <td>{{ entity.valor }}</td>
                 
                 <td>{{ entity.pago }}
+                
+                {% if entity.estado == 1 %}
+                    <td>Facturado</td>
+                {% else %}
+                    <td>Gratis</td>
+                {% endif %}
                 </td>
+                
             </tr>
         {% endfor %}
         </tbody>
