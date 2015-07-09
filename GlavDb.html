@@ -1,0 +1,2421 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Glav</title>
+    <style type="text/css">
+body {
+	margin: 10px 10px 10px 15px;
+	padding: 0px 0px 0px 0px;
+	background: #ffffff; 
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 10pt;
+color: Black;
+
+}
+
+div.header {
+	position: relative;
+	left: 0px;
+	padding: 0px 0px 0px 0px;
+	border-bottom: 1px solid #999999;
+	background-color: #99ccff;
+}
+
+td.toc 
+{
+	padding: 5px;
+	background-color: #dddddd;
+}
+
+div.toc 
+{
+	font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 9pt;
+color: Black;
+
+}
+
+div.toc ul {
+	list-style: none;
+	padding: 1px 1px 1px 1px;
+	margin: 0;
+	line-height: 90%;
+	font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 9pt;
+color: Black;
+
+}
+
+div.toc ul ul 
+{
+	padding-left: 8px;
+	font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 9pt;
+color: Black;
+
+}
+
+div.toc ul ul ul
+{
+	padding-left: 8px;
+	font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 9pt;
+color: Black;
+
+}
+
+li.section
+{
+	padding: 1px;
+	margin: 1px;
+	padding-left: 8px;
+}
+
+li.topic
+{
+	padding: 1px;
+	margin: 1px;
+	padding-left: 8px;
+}
+
+div.toc a{cursor:pointer;display:block;color:#000000;padding:2px 4px 4px 8px;margin:1px;text-decoration:none;}
+div.toc a:visited{color:#000000;padding:2px 4px 4px 8px;margin:1px;}
+div.toc a:hover{border:1px solid #cccccc;margin:0;padding:2px 4px 4px 8px;background-color:#f1f1f1;text-decoration:none;}
+
+
+div.body {
+	top: 0px;
+	padding: 5px 20px 0px 22px;
+}
+
+h1, h2, h3, h4, h5 {
+	margin-bottom: .4em; 
+	margin-top: 1em;
+	margin-left: -18px;
+}
+h1 
+{
+    font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 18pt;
+color: Black;
+
+	margin-top: 0;
+}
+h1.title
+{
+	margin-left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 28pt;
+color: Black;
+text-align: right;
+
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 16pt;
+color: Black;
+
+}
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 15pt;
+color: Black;
+
+}
+h3.toctitle {
+    font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 14pt;
+color: Black;
+text-align: right;
+
+}
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 14pt;
+color: Black;
+
+}
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 10pt;
+color: Black;
+
+}
+span.xml-element {
+    color: #008b8b;
+
+}
+span.xml-attribute {
+    color: #FF0034;
+
+}
+span.xml-attvalue {
+    color: #0062FF;
+
+}
+span.xml-delimiter {
+    color: #0062FF;
+
+}
+span.xml-text {
+    color: #000000;
+
+}
+span.xml-comment {
+    color: #50F03C;
+
+}
+span.xml-pi {
+    color: #0062FF;
+
+}
+span.sql-other {
+    color: #0A7AD0;
+
+}
+span.sql-comment {
+    color: #50F03C;
+
+}
+span.sql-keyword {
+    color: #0062FF;
+
+}
+span.sql-identifier {
+    color: #000000;
+
+}
+span.sql-string {
+    color: #FF0034;
+
+}
+span.sql-number {
+    color: #000000;
+
+}
+strong {
+    font-weight: bold;
+
+}
+emphasis {
+    font-style: italic;
+
+}
+a:link, a:visited, a:hover {
+    text-decoration: underline;
+color: #0062FF;
+
+}
+div.title {
+	padding: 20px 10px 0px 22px; 
+}
+div.title h1 {
+	margin-bottom: .2em
+}
+div.header div {
+}
+
+div.header table {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	width: 100%;
+	height: 21px; 
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 0px;
+	background-color: #99ccff; 
+}
+div.header table td {
+	margin: 0px 0px 0px 0px;
+	padding: 2px 0px 0px 4px;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #999999;
+	background: transparent; 
+}
+p {
+	margin: .5em 0em .5em 0em;
+}
+pre	{
+	margin-top: .5em;
+	margin-bottom: .5em; 
+	font-family: Courier New, Courier, Monospace;
+font-style: normal;
+font-weight: normal;
+font-size: 8pt;
+color: #000066;
+
+}
+hr {
+	color: #999999;
+	height: 1px;
+}
+ul {
+margin: .5em 0em 0em 1em;
+padding-left: 1em;
+}
+ul li {
+margin-bottom: .5em;
+padding-left: .5em;
+margin-left: 0em;
+}
+ol {
+margin: .5em 0em 0em 1em;
+padding-left: 1em;
+}
+ol li {
+margin-bottom: .5em;
+padding-left: 0em;
+margin-left: .5em;
+}
+blockquote {
+margin: .5em 0em 0em 2.5em;
+}
+ul p, ol p, dl p {
+	margin-left: 0em;
+}
+ul p.label, ol p.label {
+	margin-top: .5em;
+}
+dl {
+    margin-top: 0em;
+    padding-left: 1px;
+}
+dd {
+    font-style: italic;
+    margin-bottom: 0em;
+    margin-left: 1.5em;
+}
+dt {
+    font-weight: bold;
+    margin-top: .5em;
+}
+
+img {
+	border: none; 
+}
+.error {
+	color: Red;
+	font-weight: bold;
+}
+sup, sub	{
+font-size: 90%;
+}
+
+table {
+	width: 90%; 
+	margin-top: .6em;
+	margin-bottom: .3em;
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	border-color: #999999;
+	background-color: #999999; 
+}
+
+table th { 
+	background: #cccccc; 
+	vertical-align: bottom;
+	font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 10pt;
+color: Black;
+
+}
+
+table td {
+	padding-left: 12px;
+	background: #ffffff;
+	vertical-align: top;
+	font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 10pt;
+color: Black;
+
+}
+
+table th, table td { 
+	border-style: solid; 
+	border-width: 0px 0px 1px 0px;
+	border-color: #999999;
+	padding: 4px 6px;
+	text-align: left;
+}
+
+table td.keyIcon { 
+	padding-left: 12px;
+	background-image: url(Glav_files/PrimaryKeyScreen.gif);
+	background-repeat: no-repeat;
+	background-position: 2px left;
+}
+
+tr.startGroup0 td.first { 
+	background-color: #99ccff;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	background-image: url(Glav_files/TopTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 10; 
+	background-position: -80px 0;
+}
+
+tr.endGroup0 td.first {
+	background-color: #99ccff;
+	height: 10px;
+	background-image: url(Glav_files/BottomTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 10; 
+	background-position: -80px 0;
+}
+
+tr.group0 td.first {
+	padding-left: 10;
+}
+
+tr.startGroup0 td.middle, tr.startGroup0 td.last, 
+tr.endGroup0 td.middle, tr.endGroup0 td.last {
+	background-color: #99ccff;
+}
+
+tr.startGroup1 td.first { 
+	background-color: #80FF80;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	background-image: url(Glav_files/TopTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 20; 
+	background-position: -70px 0;
+}
+
+tr.endGroup1 td.first {
+	background-color: #80FF80;
+	height: 10px;
+	background-image: url(Glav_files/BottomTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 20; 
+	background-position: -70px 0;
+}
+
+tr.group1 td.first {
+	padding-left: 20; 
+}
+
+tr.startGroup1 td.middle, tr.startGroup1 td.last,
+tr.endGroup1 td.middle, tr.endGroup1 td.last {
+	background-color: #80FF80;
+}
+
+tr.startGroup2 td.first { 
+	background-color: #FFFF80;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	background-image: url(Glav_files/TopTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 30; 
+	background-position: -60px 0;
+}
+
+tr.endGroup2 td.first {
+	background-color: #FFFF80;
+	height: 10px;
+	background-image: url(Glav_files/BottomTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 30; 
+	background-position: -60px 0;
+}
+
+tr.group2 td.first {
+	padding-left: 30;
+}
+
+tr.startGroup2 td.middle, tr.startGroup2 td.last, 
+tr.endGroup2 td.middle, tr.endGroup2 td.last {
+	background-color: #FFFF80;
+}
+
+tr.startGroup3 td.first { 
+	background-color: #8080FF;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	background-image: url(Glav_files/TopTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 40; 
+	background-position: -50px 0;
+}
+
+tr.endGroup3 td.first {
+	background-color: #8080FF;
+	height: 10px;
+	background-image: url(Glav_files/BottomTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 40; 
+	background-position: -50px 0;
+}
+
+tr.group3 td.first {
+	padding-left: 40;
+}
+
+tr.startGroup3 td.middle, tr.startGroup3 td.last, 
+tr.endGroup3 td.middle, tr.endGroup3 td.last {
+	background-color: #8080FF;
+}
+
+tr.startGroup4 td.first { 
+	background-color: #FF80FF;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	background-image: url(Glav_files/TopTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 50; 
+	background-position: -40px 0;
+}
+
+tr.endGroup4 td.first {
+	background-color: #FF80FF;
+	height: 10px;
+	background-image: url(Glav_files/BottomTab.gif);
+	background-repeat: no-repeat;
+	padding-left: 50; 
+	background-position: -40px 0;
+}
+
+tr.group4 td.first {
+	padding-left: 50;
+}
+
+tr.startGroup4 td.middle, tr.startGroup4 td.last, 
+tr.endGroup4 td.middle, tr.endGroup4 td.last {
+	background-color: #FF80FF;
+}
+
+img.framed {
+	border: solid black 1px;
+}
+
+    </style>
+</head>
+<body>
+<h1 class="title">Glav</h1>
+<div class="title"><h3 class="toctitle">Table of Contents</h3></div>
+    <div class="toc">
+    <ul>
+      <li class="section"><a href="#Overview">Glav</a><ul>
+          <li class="section"><a href="#DB-Glav">Glav</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+    <body><a name="Overview"></a><div class="title">
+      <h1>Glav</h1>
+    </div>
+    <div class="body">
+      <h5>Sources</h5>
+      <table cellspacing="0" class="reference">
+        <col width="35%">
+        <col width="65%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#DB-Glav">Glav</a> </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="DB-Glav"></a><div class="title">
+      <h2>Glav Database</h2>
+    </div>
+    <div class="body">
+      <h5>See Also</h5>
+      <p><a href="#TB-Glav">Tables</a></p>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav"></a><div class="title">
+      <h3>Tables: Glav</h3>
+    </div>
+    <div class="body">
+      <h5>Tables</h5>
+      <table cellspacing="0" class="reference">
+        <col width="35%">
+        <col width="65%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#TB-Glav-automotor">automotor</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-cargo">cargo</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-cliente">cliente</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-empleado">empleado</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-factura">factura</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-facturadetalle">facturadetalle</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-fos_user">fos_user</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-grlciudad">grlciudad</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-grlregion">grlregion</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-prestamo">prestamo</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-rubro">rubro</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-servicio">servicio</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-servicioestado">servicioestado</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-tipoautomotor">tipoautomotor</a> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-tiporubro">tiporubro</a> </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-automotor"></a><div class="title">
+      <h4>Table: automotor</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_tipo_automotor </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>modelo </td>
+            <td>varchar(250) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>matricula </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#TB-Glav-tipoautomotor">tipoautomotor</a> </td>
+            <td>id_tipo_automotor </td>
+            <td>automotor </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td>automotor </td>
+            <td>id_automotor </td>
+            <td><a href="#TB-Glav-servicio">servicio</a> </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IDX_27A426F47A5DA61F </td>
+            <td>Non-unique </td>
+            <td>id_tipo_automotor </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-cargo"></a><div class="title">
+      <h4>Table: cargo</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>descripcion </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>cargo </td>
+            <td>id_cargo </td>
+            <td><a href="#TB-Glav-empleado">empleado</a> </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-cliente"></a><div class="title">
+      <h4>Table: cliente</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>identificacion </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>apellido </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>genero </td>
+            <td>varchar(45) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>f_nacimiento </td>
+            <td>date </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>direccion </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>telefono </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>celular </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>email </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>cliente </td>
+            <td>id_cliente </td>
+            <td><a href="#TB-Glav-servicio">servicio</a> </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-empleado"></a><div class="title">
+      <h4>Table: empleado</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_cargo </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>identificacion </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>apellido </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>genero </td>
+            <td>varchar(45) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>f_nacimiento </td>
+            <td>date </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>direccion </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>telefono </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>celular </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>email </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>empleado </td>
+            <td>id_empleado </td>
+            <td><a href="#TB-Glav-servicio">servicio</a> </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td>empleado </td>
+            <td>id_empleado </td>
+            <td><a href="#TB-Glav-prestamo">prestamo</a> </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-cargo">cargo</a> </td>
+            <td>id_cargo </td>
+            <td>empleado </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IDX_20AFDD04D56B1641 </td>
+            <td>Non-unique </td>
+            <td>id_cargo </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-factura"></a><div class="title">
+      <h4>Table: factura</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_usuario </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>valor </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>iva </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>total </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>observacion </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>factura </td>
+            <td>id_factura </td>
+            <td><a href="#TB-Glav-facturadetalle">facturadetalle</a> </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-facturadetalle"></a><div class="title">
+      <h4>Table: facturadetalle</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_factura </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_servicio </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>cantidad </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>valor </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>iva </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>total </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#TB-Glav-factura">factura</a> </td>
+            <td>id_factura </td>
+            <td>facturadetalle </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-servicio">servicio</a> </td>
+            <td>id_servicio </td>
+            <td>facturadetalle </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IDX_AA0EC6AA27760979 </td>
+            <td>Non-unique </td>
+            <td>id_factura </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>IDX_AA0EC6AA9B5D1EBF </td>
+            <td>Non-unique </td>
+            <td>id_servicio </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-fos_user"></a><div class="title">
+      <h4>Table: fos_user</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>username </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>username_canonical </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>email </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>email_canonical </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>enabled </td>
+            <td>tinyint </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>salt </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>password </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>last_login </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>locked </td>
+            <td>tinyint </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>expired </td>
+            <td>tinyint </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>expires_at </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>confirmation_token </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>password_requested_at </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>roles </td>
+            <td>longtext </td>
+            <td style="text-align: ">(DC2Type:array)<br></td>
+          </tr>
+          <tr>
+            <td>credentials_expired </td>
+            <td>tinyint </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>credentials_expire_at </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>UNIQ_957A647992FC23A8 </td>
+            <td>Unique </td>
+            <td>username_canonical </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>UNIQ_957A6479A0D96FBF </td>
+            <td>Unique </td>
+            <td>email_canonical </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-grlciudad"></a><div class="title">
+      <h4>Table: grlciudad</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_grl_region </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>codigo </td>
+            <td>varchar(15) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(27) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>latitud </td>
+            <td>varchar(15) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>longitud </td>
+            <td>varchar(15) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(15) </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>id_grl_region </td>
+            <td>Non-unique </td>
+            <td>id_grl_region </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-grlregion"></a><div class="title">
+      <h4>Table: grlregion</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(100) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-prestamo"></a><div class="title">
+      <h4>Table: prestamo</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_empleado </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>valor </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>observacion </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#TB-Glav-empleado">empleado</a> </td>
+            <td>id_empleado </td>
+            <td>prestamo </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IDX_DAE16A4890253C7 </td>
+            <td>Non-unique </td>
+            <td>id_empleado </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-rubro"></a><div class="title">
+      <h4>Table: rubro</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_tipo_rubro </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>descripcion </td>
+            <td>varchar(45) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>valor </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>iva </td>
+            <td>varchar(200) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>rubro </td>
+            <td>id_rubro </td>
+            <td><a href="#TB-Glav-servicio">servicio</a> </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-tiporubro">tiporubro</a> </td>
+            <td>id_tipo_rubro </td>
+            <td>rubro </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IDX_534743EB31B076F0 </td>
+            <td>Non-unique </td>
+            <td>id_tipo_rubro </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-servicio"></a><div class="title">
+      <h4>Table: servicio</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_cliente </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_empleado </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_automotor </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>id_rubro </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado_servicio </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>observacion </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>pago </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha_servicio </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha_entrega </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#TB-Glav-rubro">rubro</a> </td>
+            <td>id_rubro </td>
+            <td>servicio </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-empleado">empleado</a> </td>
+            <td>id_empleado </td>
+            <td>servicio </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td>servicio </td>
+            <td>id_servicio </td>
+            <td><a href="#TB-Glav-facturadetalle">facturadetalle</a> </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-automotor">automotor</a> </td>
+            <td>id_automotor </td>
+            <td>servicio </td>
+            <td>id </td>
+          </tr>
+          <tr>
+            <td><a href="#TB-Glav-cliente">cliente</a> </td>
+            <td>id_cliente </td>
+            <td>servicio </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IDX_32F0907C25601870 </td>
+            <td>Non-unique </td>
+            <td>id_automotor </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>IDX_32F0907C2A813255 </td>
+            <td>Non-unique </td>
+            <td>id_cliente </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>IDX_32F0907C7C032DDF </td>
+            <td>Non-unique </td>
+            <td>id_rubro </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>IDX_32F0907C890253C7 </td>
+            <td>Non-unique </td>
+            <td>id_empleado </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-servicioestado"></a><div class="title">
+      <h4>Table: servicioestado</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-tipoautomotor"></a><div class="title">
+      <h4>Table: tipoautomotor</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>descripcion </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>tipoautomotor </td>
+            <td>id_tipo_automotor </td>
+            <td><a href="#TB-Glav-automotor">automotor</a> </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div><a name="TB-Glav-tiporubro"></a><div class="title">
+      <h4>Table: tiporubro</h4>
+    </div>
+    <div class="body">
+      <h5>Columns</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="keyIcon">id </td>
+            <td>int </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>hash </td>
+            <td>varchar(50) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>nombre </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>descripcion </td>
+            <td>varchar(255) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>estado </td>
+            <td>varchar(1) </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>fecha </td>
+            <td>datetime </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Relationships</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Primary Table&nbsp;</th>
+            <th>Primary Key&nbsp;</th>
+            <th>Foreign Table&nbsp;</th>
+            <th>Foreign Key&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>tiporubro </td>
+            <td>id_tipo_rubro </td>
+            <td><a href="#TB-Glav-rubro">rubro</a> </td>
+            <td>id </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Indexes</h5>
+      <table cellspacing="0" class="reference">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <thead>
+          <tr>
+            <th>Name&nbsp;</th>
+            <th>Type&nbsp;</th>
+            <th>Columns&nbsp;</th>
+            <th>Description&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRIMARY </td>
+            <td>Unique </td>
+            <td>id </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+      <h5>Notice</h5>
+      <p>
+          This document was created with the trial version of TechWriter.
+          This notice is removed once a valid license is purchased.
+          Visit <a href="http://www.adivo.com">www.adivo.com</a> for purchase options.
+        </p>
+    </div>
+  </body>
+</html>
+
+</body>
+</html>

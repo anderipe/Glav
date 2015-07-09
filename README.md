@@ -1,3 +1,8 @@
+// La opcion servicio gratis no aparece en los registros de servicio
+// Cuando se muestra el informe de empleados no carga la plantilla completa
+//Los ultimos empleados, clientes servicios no aparecen con una factura y tampoco dentro de los informes de pagos de los empleados y no se ve actualizado en las graficas ninguno de los movimientos
+
+
 //debe desaparecer el servicio al momento de facturarse
 //al momento de crear ekl usuario automaticamente se loguea con este
 //Al crear cargo que menus quedan creados para el cargo(eso no tiene nada que ver con los cargos)(se crean los usuarios master que soliciten y los demas son operarios)
