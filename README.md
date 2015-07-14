@@ -1,3 +1,21 @@
+//En la tabla servicio no aparece el search (ok)
+//NO genera factura de nuevos servicios(ok)
+//Mensaje de confirmacion para las acciones
+//dejar por defecto un tipo de rubro y un tipo de automotor llamado estadar
+//cambiar la informacion del boton de buscar servicio , debe aparecer la placa
+//verificar el informe por fechas
+
+Documentacion Tecnica
+
+http://drum-barcode.codio.io:3000/docs/index.html
+
+
+Documentacion Base de datos
+
+https://drum-barcode.codio.io/GlavDb.html
+
+
+
 // La opcion servicio gratis no aparece en los registros de servicio
 // Cuando se muestra el informe de empleados no carga la plantilla completa
 //Los ultimos empleados, clientes servicios no aparecen con una factura y tampoco dentro de los informes de pagos de los empleados y no se ve actualizado en las graficas ninguno de los movimientos

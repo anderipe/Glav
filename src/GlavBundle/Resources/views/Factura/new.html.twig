@@ -4,7 +4,7 @@
 {% block infoUserTop %}
 <form id="factura" action="{{ path('factura_guardar') }}" method="post" enctype="multipart/form-data" >
 
-    <h1>Factura creation</h1>
+    <h1>Crear Factura</h1>
 <input type="hidden" id="usuario" name="usuario" value="{{ app.user.id }}">
 
     {{ form_widget(formF) }}

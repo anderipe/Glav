@@ -140,17 +140,18 @@ and s.estado_servicio = 'Finalizado'";
         // ask the service for a Excel5
        $phpExcelObject = $this->get('phpexcel')->createPHPExcelObject();
        
-              
+      //llamado a la base de datos       
        $em = $this->getDoctrine()->getManager();
        //$aspirantes = $this->getDoctrine()->getRepository('GlavBundle:Empleado')->findAll(array(),array('nombre' => 'DESC'));
         
        
-       
+       //consulta
        $sql = "select s.id,s.observacion,s.fecha_servicio,s.fecha_entrega,s.estado_servicio,s.pago,concat(e.nombre,' ',e.apellido) empleado,e.identificacion,ca.nombre cargo, concat(c.nombre,' ',c.apellido) cliente,c.identificacion cidentificacion,r.nombre rubro,r.valor,a.matricula from Servicio s inner join Empleado e on e.id=s.id_empleado inner join Cliente c on c.id =s.id_cliente inner join Rubro r on r.id = s.id_rubro inner join Cargo ca on c.id = e.id_cargo inner join Automotor a on a.id=s.id_automotor group by s.id ORDER BY `s`.`id` ASC";
         
        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
        $con->execute();
        $aspirantes = $con->fetchAll(); 
+       //trae el nombre del usuario 
        $user = $this->getUser()->getUsername(); 
        
 

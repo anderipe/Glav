@@ -24,6 +24,8 @@ class ServicioType extends AbstractType
             //'multiple' => true,
             'class'    => 'GlavBundle:Cliente',
             'property' => 'label',
+            'label' => 'Cliente',
+
             'attr' => array('data-rel'=>'chosen'),
             ))
             //->add('id_cliente','choice', array('label' => 'Cliente', 'attr' => array('data-rel'=>'chosen')))
@@ -32,6 +34,7 @@ class ServicioType extends AbstractType
             //'multiple' => true,
             'class'    => 'GlavBundle:Empleado',
             'property' => 'label',
+            'label' => 'Empleado',
             'attr' => array('data-rel'=>'chosen'),
             ))
             //->add('id_automotor')
@@ -39,6 +42,7 @@ class ServicioType extends AbstractType
             //'multiple' => true,
             'class'    => 'GlavBundle:Automotor',
             'property' => 'label',
+            'label' => 'Placa',
             'attr' => array('data-rel'=>'chosen'),
             ))
             ->add('estadoServicio', 'choice', array(
@@ -53,10 +57,12 @@ class ServicioType extends AbstractType
             //'multiple' => true,
             'class'    => 'GlavBundle:Rubro',
             'property' => 'label',
+            'label' => 'Servicio',
             'attr' => array('data-rel'=>'chosen'),
             ))
             ->add('fecha_entrega')
             ->add('observacion')
+            //anderipe se deja la opcion de permitir habilitar el boton de los pago si se necesita
             //->add('pago', 'choice', array('choices' => array('Pendiente' => 'Pendiente', 'Pagado' => 'Pagado')))
         ;
     }

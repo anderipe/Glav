@@ -1,5 +1,11 @@
 <?php
 
+/**
+  * @author Anderson Pinto  <anderipe@gmail.com>
+  *@version 2.0
+  * @copyright [src/controller]  [20 [74] ] 2015/06 Autolavado [ Metodos ]
+  */
+
 namespace GlavBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;

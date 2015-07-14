@@ -138,20 +138,20 @@
 
             <a class="quick-button metro yellow span2">
                             <i class="icon-group"></i>
-                            <p>Clientes</p>
-                            <span class="badge">{{ cliente }}</span>
+                            <p>Clientes {{ cliente }}</p>
+                            <span class="badge"></span>
                         </a>
             <a class="quick-button metro red span2">
             <i class="icon-truck"></i>
-                            <p>Automotores</p>
-                            <span class="badge">{{ automotor }}</span>
+                            <p>Automotores {{ automotor }}</p>
+                            <span class="badge"></span>
                         </a>
 
 
             <a class="quick-button metro green span2">
 					<i class="icon-barcode"></i>
-					<p>Rubros</p>
-                <span class="badge">{{ rubro }}</span>
+					<p>Servicios {{ rubro }}</p>
+                <span class="badge"></span>
 				</a>
                 
                 {% set diario = 0 %}
@@ -165,7 +165,7 @@
                 <a class="quick-button metro pink span2">
 					<i class="icon-envelope"></i>
 					<p>Facturas {{ diario }}</p>
-					<span class="badge">{{ factura }}</span>
+					<span class="badge"></span>
 				</a>
             
 
