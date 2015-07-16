@@ -52,6 +52,17 @@ class InformeController extends Controller
         //$fecha->setfechaInicial($form['fecha_inicial']->getData());
         //$estado = "Finalizado";
         
+//         $sql="select concat(e.nombre, ' ',e.apellido ) as empleado,a.matricula ,r.valor,sum(p.valor) as prestamo
+//         from Servicio s 
+//         inner join Automotor a on a.id= s.id_automotor 
+//         inner join Empleado e on e.id = s.id_empleado
+//         join Rubro r on r.id= s.id_rubro
+//         inner join Prestamo p on p.id_empleado = e.id
+//         where s.estado_servicio = 'Finalizado' and s.pago = 'Pendiente' and
+//         s.fecha_servicio between '".$fechaInicial."' and '".$fechaFinal."'
+//         group by s.id
+//         order by e.nombre";
+        
         $sql="select concat(e.nombre, ' ',e.apellido ) as empleado,a.matricula ,r.valor,sum(p.valor) as prestamo
         from Servicio s 
         inner join Automotor a on a.id= s.id_automotor 
@@ -59,14 +70,14 @@ class InformeController extends Controller
         join Rubro r on r.id= s.id_rubro
         inner join Prestamo p on p.id_empleado = e.id
         where s.estado_servicio = 'Finalizado' and s.pago = 'Pendiente' and
-        s.fecha_servicio between '".$fechaInicial."' and '".$fechaFinal."'
+        s.fecha_servicio >= '".$fechaInicial."  00:00:00' and s.fecha_servicio <=  '".$fechaFinal."  23:59:59'
         group by s.id
         order by e.nombre";
 
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
         $con->execute();
         $entities = $con->fetchAll(); 
-        //echo $sql;exit();
+        //$sql;exit();
 
         //exit(\Doctrine\Common\Util\Debug::dump($entities));
         return $this->render('GlavBundle:Informe:index.html.twig', array(

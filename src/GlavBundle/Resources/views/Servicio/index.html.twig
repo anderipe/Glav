@@ -20,10 +20,9 @@
              
                 <th>Matricula</th>
                 <th>Empleado</th>
-                <th>Estadoservicio</th>
-                <th>Observacion</th>
-                <th>Fecha_servicio</th>
-                <th>Fecha_entrega</th>
+                <th>Estado</th>
+                <th>Servicio</th>
+                <th>Entrega</th>
                 <th>Pago</th>
                 <th>Actions</th>
             </tr>
@@ -33,10 +32,9 @@
                 
                 <th>Matricula</th>
                 <th>Empleado</th>
-                <th>Estadoservicio</th>
-                <th>Observacion</th>
-                <th>Fecha_servicio</th>
-                <th>Fecha_entrega</th>
+                <th>Estado</th>
+                <th>Servicio</th>
+                <th>Entrega</th>
                 <th>Pago</th>
                 <th>Actions</th>
             </tr>
@@ -48,7 +46,6 @@
                 <td>{{ entity.matricula }}</td>
                 <td>{{ entity.empleado }}</td>
                 <td>{{ entity.estado_servicio }}</td>
-                <td>{{ entity.observacion }}</td>
                 <td>{% if entity.fecha_servicio %}{{ entity.fecha_servicio|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.fecha_entrega %}{{ entity.fecha_entrega|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ entity.pago }}</td>

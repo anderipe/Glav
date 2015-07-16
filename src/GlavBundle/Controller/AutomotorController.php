@@ -52,6 +52,8 @@ class AutomotorController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $TipoAutomotor = $em->getRepository('GlavBundle:TipoAutomotor')->find(1);
+            $entity->setIdTipoAutomotor($TipoAutomotor);
             $em->persist($entity);
             $em->flush();
 

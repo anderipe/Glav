@@ -39,7 +39,7 @@ class Automotor
      * })
      */
     
-    private $id_tipo_automotor;
+    private $id_tipo_automotor = 1;
     
 
     /**

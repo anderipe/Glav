@@ -16,9 +16,11 @@ class RubroType extends AbstractType
     {
         $builder
            // ->add('hash')
-            ->add('id_tipo_rubro', 'entity', 
-                  array('label' => 'Tipo de Servicio',
-                        'class'    => 'GlavBundle:TipoRubro'))
+//             ->add('id_tipo_rubro','hidden', 
+//                   array('label' => 'Tipo de Servicio',
+//                         //'class'    => 'GlavBundle:TipoRubro'
+//                         'data' => 1
+//             ))    
             ->add('nombre')
             ->add('descripcion')
             ->add('valor')

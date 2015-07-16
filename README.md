@@ -1,8 +1,8 @@
 //En la tabla servicio no aparece el search (ok)
 //NO genera factura de nuevos servicios(ok)
-//Mensaje de confirmacion para las acciones
-//dejar por defecto un tipo de rubro y un tipo de automotor llamado estadar
-//cambiar la informacion del boton de buscar servicio , debe aparecer la placa
+//Mensaje de confirmacion para las acciones(ok)(automotor)
+//dejar por defecto un tipo de rubro y un tipo de automotor llamado estadar(ok)(tipoRubro)
+//cambiar la informacion del boton de buscar servicio , debe aparecer la placa(ok)
 //verificar el informe por fechas
 
 Documentacion Tecnica

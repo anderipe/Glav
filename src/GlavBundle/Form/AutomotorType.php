@@ -20,9 +20,9 @@ class AutomotorType extends AbstractType
             ->add('matricula')
             //->add('estado')
             //->add('fecha')
-            ->add('id_tipo_automotor', 'entity', 
-                  array('label' => 'Tipo de Automotor',
-                        'class'    => 'GlavBundle:TipoAutomotor'))
+//             ->add('id_tipo_automotor', 'entity', 
+//                   array('label' => 'Tipo de Automotor',
+//                         'class'    => 'GlavBundle:TipoAutomotor'))
         ;
     }
     

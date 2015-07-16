@@ -479,10 +479,7 @@ class Servicio
     {
         return $this->estadoServicio;
     }
-    public function __toString()
-    {
-        return $this->getObservacion();
-    }
+
 
     /**
      * Set pago
@@ -505,5 +502,15 @@ class Servicio
     public function getPago()
     {
         return $this->pago;
+    }
+    
+    public function __toString()
+    {
+        return $this->getObservacion();
+    }
+    
+    public function getLabel()
+    {
+        return $this->getIdAutomotor();
     }
 }

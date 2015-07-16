@@ -6,6 +6,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use GlavBundle\Entity\Rubro;
+use GlavBundle\Entity\TipoRubro;
+use GlavBundle\Form\TipoRubroType;
 use GlavBundle\Form\RubroType;
 
 /**
@@ -41,9 +43,26 @@ class RubroController extends Controller
         $entity = new Rubro();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
+        //  $rubro = 1 ; exit();
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            
+//                 $tipoRubro = new TipoRubro();
+//                 $formF = $this->createForm(new TipoRubroType(),$tipoRubro);
+//                 $formF->handleRequest($request);  
+
+//                 //$tipoRubro->setId(2);
+//                 //guardas parent
+//                 $em->persist($tipoRubro);
+//                 //$book = new Book();
+//                 //$book->setPhrase('Write a blog post');
+//                 $entity->setIdTipoRubro($tipoRubro->setId(2));
+            
+            $TipoRubro = $em->getRepository('GlavBundle:TipoRubro')->find(1);
+            $entity->setIdTipoRubro($TipoRubro);
+            
+            
             $em->persist($entity);
             $em->flush();
 

@@ -21,13 +21,9 @@
             <tr>
                 <th>Identificacion</th>
                 <th>Nombre</th>
-                <th>Genero</th>
-                <th>Fnacimiento</th>
                 <th>Direccion</th>
-                <th>Telefono</th>
                 <th>Celular</th>
                 <th>Email</th>
-                <th>Estado</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -36,13 +32,9 @@
             <tr>
                 <td>{{ entity.identificacion }}</td>
                 <td>{{ entity.nombre }} {{ entity.apellido }}</td>
-                <td>{{ entity.genero }}</td>
-                <td>{% if entity.fNacimiento %}{{ entity.fNacimiento|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ entity.direccion }}</td>
-                <td>{{ entity.telefono }}</td>
                 <td>{{ entity.celular }}</td>
                 <td>{{ entity.email }}</td>
-                <td>{{ entity.estado }}</td>
                 <td>
                 <ul>
                 <a class="btn btn-success" href="{{ path('cliente_show', { 'id': entity.id }) }}">

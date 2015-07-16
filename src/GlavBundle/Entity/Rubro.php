@@ -91,6 +91,7 @@ class Rubro
     function __construct(){
         $this->hash=md5(time());
         $this->fecha =  new \DateTime('now');
+        #$this->id_tipo_rubro = '1';
     }
 
     /**
