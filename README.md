@@ -3,7 +3,8 @@
 //Mensaje de confirmacion para las acciones(ok)(automotor)
 //dejar por defecto un tipo de rubro y un tipo de automotor llamado estadar(ok)(tipoRubro)
 //cambiar la informacion del boton de buscar servicio , debe aparecer la placa(ok)
-//verificar el informe por fechas
+//verificar el informe por fechas(ok)
+//Plantilla (ok)
 
 Documentacion Tecnica
 

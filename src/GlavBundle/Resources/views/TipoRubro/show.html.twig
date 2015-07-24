@@ -36,6 +36,6 @@
             Editar Tipo de Servicio
         </a>
     </li>
-    <li>{{ form(delete_form) }}</li>
+    <li>{{ form(delete_form, {'attr': {'onclick': 'return confirm("Desea Eliminar el registro ?")'}}) }}</li>
 </ul>
 {% endblock %}
