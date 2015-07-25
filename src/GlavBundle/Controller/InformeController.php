@@ -68,7 +68,7 @@ class InformeController extends Controller
         inner join Automotor a on a.id= s.id_automotor 
         inner join Empleado e on e.id = s.id_empleado
         inner join Rubro r on r.id= s.id_rubro
-        inner join Prestamo p on p.id_empleado = e.id
+        left join Prestamo p on p.id_empleado = e.id
         where s.estado_servicio = 'Finalizado' and s.pago = 'Pendiente' and
         s.fecha_servicio >= '".$fechaInicial."  00:00:00' and s.fecha_servicio <=  '".$fechaFinal."  23:59:59'
         group by s.id
