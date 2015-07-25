@@ -95,7 +95,7 @@ class Servicio
      */
     
     
-    private $observacion;
+    private $observacion = "Sin observacion";
     
     /**
      * @var string

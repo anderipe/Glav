@@ -499,17 +499,6 @@ class Servicio extends \GlavBundle\Entity\Servicio implements \Doctrine\ORM\Prox
     /**
      * {@inheritDoc}
      */
-    public function __toString()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
-
-        return parent::__toString();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setPago($pago)
     {
 
@@ -527,6 +516,28 @@ class Servicio extends \GlavBundle\Entity\Servicio implements \Doctrine\ORM\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPago', array());
 
         return parent::getPago();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLabel()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLabel', array());
+
+        return parent::getLabel();
     }
 
 }

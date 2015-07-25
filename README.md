@@ -1,3 +1,10 @@
+//Servicio se realice en un boton que hay agregar matricula
+//servicio observacion no sea obligatorio(Se deja "sin observacion" se deja por defecto)
+//imprimir informe empleado, adicional ver fechas de reportes visualizar
+//fecha inicial digitada para el excel
+
+
+
 //En la tabla servicio no aparece el search (ok)
 //NO genera factura de nuevos servicios(ok)
 //Mensaje de confirmacion para las acciones(ok)(automotor)

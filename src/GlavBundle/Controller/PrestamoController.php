@@ -270,20 +270,49 @@ class PrestamoController extends Controller
               ->getSingleScalarResult();
         $balance = $balance * 0.4;
         
-        $dqlPrestamo="SELECT SUM(p.valor) FROM GlavBundle\Entity\Prestamo p
-            inner join GlavBundle\Entity\Empleado e WITH e.id=p.id_empleado
-            inner join GlavBundle\Entity\Servicio s WITH s.id_empleado=e.id
-            inner join GlavBundle\Entity\Rubro r WITH r.id=s.id_rubro ".
-            "WHERE p.id_empleado = ?1 and p.estado = ?2  ";
-   
-        $debe = $em->createQuery($dqlPrestamo)
-              ->setParameter(1, $idEmpleado)
-              ->setParameter(2, 1)
-              ->getSingleScalarResult();
+//         $dqlPrestamo="SELECT SUM(p.valor) FROM GlavBundle\Entity\Prestamo p
+//             inner join GlavBundle\Entity\Empleado e WITH e.id=p.id_empleado
+//             inner join GlavBundle\Entity\Servicio s WITH s.id_empleado=e.id
+//             inner join GlavBundle\Entity\Rubro r WITH r.id=s.id_rubro ".
+//             "WHERE p.id_empleado = ?1 and p.estado = ?2  ";
+//             
+//             
+//                
+//         $debe = $em->createQuery($dqlPrestamo)
+//               ->setParameter(1, $idEmpleado)
+//               ->setParameter(2, 1)
+//               ->getSingleScalarResult();
+        
+        
+        $sql = "SELECT p.valor as valor FROM Prestamo p
+            inner join Empleado e on e.id=p.id_empleado
+            inner join Servicio s on s.id_empleado=e.id
+            inner join Rubro r on r.id=s.id_rubro 
+            WHERE p.id_empleado = ".$idEmpleado." and p.estado = 1
+            group by p.id";
+        //echo $sql;exit();   
+        //$where = "WHERE CONCAT(c.identificacion, ' ',c.nombre, ' ',c.apellido) like '%".$datos->get('cliente')."%'";   
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $con->execute();
+        $entities = $con->fetchAll();
+        
+        //print_r($entities);exit();
+        $debe = 0;
+        
+        foreach ($entities as $entitie){
+            
+            $debe+=$entitie['valor'];
+            
+            //echo $entitie->getValor();   
+        }       
+        
+           //echo $debe;exit(); 
+            
+
         
         //echo $debe->getSql();exit();
         
-        //        echo $debe;exit();
+               //echo $debe.' '.$balance;exit();
         
         $disponible = $balance - $debe ;
          

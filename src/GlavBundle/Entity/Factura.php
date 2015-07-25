@@ -71,7 +71,7 @@ class Factura
      */
     
     
-    private $observacion;
+    private $observacion = 'Sin observacion';
         
       
     /**
