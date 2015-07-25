@@ -70,7 +70,7 @@ class InformeController extends Controller
         inner join Rubro r on r.id= s.id_rubro
         left join Prestamo p on p.id_empleado = e.id
         where s.estado_servicio = 'Finalizado' and s.pago = 'Pendiente' and
-        s.fecha_servicio >= '".$fechaInicial."  00:00:00' and s.fecha_servicio <=  '".$fechaFinal."  23:59:59'
+        s.fecha_servicio >= '".$fechaInicial."  00:00:00' and s.fecha_servicio <=  '".$fechaFinal."  23:59:59 and p.estado=1'
         group by s.id
         order by e.nombre";
 
