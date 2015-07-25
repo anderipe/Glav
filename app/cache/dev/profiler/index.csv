@@ -190,3 +190,5 @@ eef0aa,172.17.42.1,GET,http://drum-barcode.codio.io:3000/web/app_dev.php/informe
 ea2eec,172.17.42.1,GET,http://drum-barcode.codio.io:3000/web/app_dev.php/cargo/,1437796104,
 f34b2e,172.17.42.1,GET,http://drum-barcode.codio.io:3000/web/app_dev.php/informe/,1437797650,
 efe7be,172.17.42.1,POST,http://drum-barcode.codio.io:3000/web/app_dev.php/informe/empleado,1437797659,
+91c068,172.17.42.1,GET,http://drum-barcode.codio.io:3000/web/app_dev.php/prestamo/,1437798562,
+bd34ca,172.17.42.1,GET,http://drum-barcode.codio.io:3000/web/app_dev.php/prestamo/10/show,1437798567,

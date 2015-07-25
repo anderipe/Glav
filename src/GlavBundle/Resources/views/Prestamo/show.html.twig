@@ -33,9 +33,9 @@
         </a>
     </li>
     <li>
-        <a href="{{ path('prestamo_edit', { 'id': entity.id }) }}">
+        {# <a href="{{ path('prestamo_edit', { 'id': entity.id }) }}">
             Editar Registro Prestamo
-        </a>
+        </a> #}
     </li>
     <li>{{ form(delete_form, {'attr': {'onclick': 'return confirm("Desea Eliminar el registro ?")'}}) }}</li>
 </ul>
