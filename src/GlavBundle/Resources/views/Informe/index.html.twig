@@ -1,8 +1,72 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
+<div id="page-wrap">
+<style>
 
+.table-bordered {
+  border-color: #eee;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+.table-bordered {
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  border-left: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+user agent stylesheettable {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: grey;
+}
+Inherited from 
+body {
+  background: #F5F5F5;
+  color: #333;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  background-color: #fff;
+}
+Inherited from 
+html, html .halflings {
+  -webkit-font-smoothing: antialiased !important;
+}
+html, html .halflings {
+  -webkit-font-smoothing: antialiased !important;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+</style>
     <h1>Informe Empleados</h1>
+    
+        <h2> Desde el {{ fechaInicial }} a  {{ fechaFinal }}</h2>
 
         <div id="informacion">
 
@@ -43,11 +107,11 @@
             {% endif %}
         <thead>
             <tr>
-                <th colspan="2">{{ entity.empleado }}</th>
+                <th align="left">{{ entity.empleado }}</th>
             </tr>
         </thead>
         {% endif %}
-            {% set cantidad = entity.empleado %}
+           {% set cantidad = entity.empleado %}
         <tbody>
             <tr>
                 <td>{{ entity.matricula }}</td>
@@ -74,6 +138,20 @@
     </table>
 
        </div>
+</div>
 
+<button type="button"  onclick="javascript:imprSelec('page-wrap')" class="btn btn-default" id="imprimir" style="font-size: 10pt !important; margin: 2pt; width: 70pt !important" title="Imprimir en formato PDF">IMPRIMIR</button>
+
+        <script language="Javascript">
+            function imprSelec(nombre)
+            {
+                var ficha = document.getElementById(nombre);
+                var ventimp = window.open(' ', 'popimpr');
+                ventimp.document.write(ficha.innerHTML);
+                ventimp.document.close();
+                ventimp.print( );
+                //ventimp.close();
+            }
+        </script>
 
     {% endblock %}

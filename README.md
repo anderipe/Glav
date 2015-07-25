@@ -1,8 +1,8 @@
 //Servicio se realice en un boton que hay agregar matricula
-//servicio observacion no sea obligatorio(Se deja "sin observacion" se deja por defecto)
-//imprimir informe empleado, adicional ver fechas de reportes visualizar
+//servicio observacion no sea obligatorio(Se deja "sin observacion" se deja por defecto)(ok)
+//imprimir informe empleado, adicional ver fechas de reportes visualizar(ok)
 //fecha inicial digitada para el excel
-//excel aparecer valor de lavadero y valor del empleado
+//excel aparecer valor de lavadero y valor del empleado(ok)
 
 
 

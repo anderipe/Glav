@@ -81,8 +81,8 @@ class InformeController extends Controller
 
         //exit(\Doctrine\Common\Util\Debug::dump($entities));
         return $this->render('GlavBundle:Informe:index.html.twig', array(
-            'entities'   => $entities,
-        ));
+            'entities'   => $entities,'fechaInicial' => $fechaInicial , 'fechaFinal' => $fechaFinal
+        ));  
     }
     
     public function informeSemanalAction()
@@ -157,7 +157,7 @@ and s.estado_servicio = 'Finalizado'";
         
        
        //consulta
-       $sql = "select s.id,s.observacion,s.fecha_servicio,s.fecha_entrega,s.estado_servicio,s.pago,concat(e.nombre,' ',e.apellido) empleado,e.identificacion,ca.nombre cargo, concat(c.nombre,' ',c.apellido) cliente,c.identificacion cidentificacion,r.nombre rubro,r.valor,a.matricula from Servicio s inner join Empleado e on e.id=s.id_empleado inner join Cliente c on c.id =s.id_cliente inner join Rubro r on r.id = s.id_rubro inner join Cargo ca on c.id = e.id_cargo inner join Automotor a on a.id=s.id_automotor group by s.id ORDER BY `s`.`id` ASC";
+       $sql = "select s.id,s.observacion,s.fecha_servicio,s.fecha_entrega,s.estado_servicio,s.pago,concat(e.nombre,' ',e.apellido) empleado,e.identificacion,ca.nombre cargo, concat(c.nombre,' ',c.apellido) cliente,c.identificacion cidentificacion,r.nombre rubro,r.valor * 0.6 lavadero,r.valor * 0.4 vempleado ,a.matricula from Servicio s inner join Empleado e on e.id=s.id_empleado inner join Cliente c on c.id =s.id_cliente inner join Rubro r on r.id = s.id_rubro inner join Cargo ca on c.id = e.id_cargo inner join Automotor a on a.id=s.id_automotor group by s.id ORDER BY `s`.`id` ASC";
         
        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
        $con->execute();
@@ -187,8 +187,9 @@ and s.estado_servicio = 'Finalizado'";
            ->setCellValue('J1', 'cliente')
            ->setCellValue('K1', 'identificacion')
            ->setCellValue('L1', 'rubro')
-           ->setCellValue('M1', 'valor')
-           ->setCellValue('N1', 'matricula');
+           ->setCellValue('M1', 'lavadero valor')
+           ->setCellValue('N1', 'empleado valor')
+           ->setCellValue('O1', 'matricula');
 
 
 
@@ -210,8 +211,9 @@ and s.estado_servicio = 'Finalizado'";
            ->setCellValue('J'.$i, $aspirante['cliente'])
            ->setCellValue('K'.$i, $aspirante['cidentificacion'])
            ->setCellValue('L'.$i, $aspirante['rubro'])
-           ->setCellValue('M'.$i, $aspirante['valor'])
-           ->setCellValue('N'.$i, $aspirante['matricula']);
+           ->setCellValue('M'.$i, $aspirante['lavadero'])
+           ->setCellValue('N'.$i, $aspirante['vempleado'])
+           ->setCellValue('O'.$i, $aspirante['matricula']);
 
 
 
