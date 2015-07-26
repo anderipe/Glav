@@ -146,9 +146,11 @@ and s.estado_servicio = 'Finalizado'";
         
     }
     
-    public function excelAction(){
+    public function excelAction(Request $datos){
         
         // ask the service for a Excel5
+      
+       $fechaInicial =  $datos->get('inicio');
        $phpExcelObject = $this->get('phpexcel')->createPHPExcelObject();
        
       //llamado a la base de datos       
@@ -157,7 +159,7 @@ and s.estado_servicio = 'Finalizado'";
         
        
        //consulta
-       $sql = "select s.id,s.observacion,s.fecha_servicio,s.fecha_entrega,s.estado_servicio,s.pago,concat(e.nombre,' ',e.apellido) empleado,e.identificacion,ca.nombre cargo, concat(c.nombre,' ',c.apellido) cliente,c.identificacion cidentificacion,r.nombre rubro,r.valor * 0.6 lavadero,r.valor * 0.4 vempleado ,a.matricula from Servicio s inner join Empleado e on e.id=s.id_empleado inner join Cliente c on c.id =s.id_cliente inner join Rubro r on r.id = s.id_rubro inner join Cargo ca on c.id = e.id_cargo inner join Automotor a on a.id=s.id_automotor group by s.id ORDER BY `s`.`id` ASC";
+       $sql = "select s.id,s.observacion,s.fecha_servicio,s.fecha_entrega,s.estado_servicio,s.pago,concat(e.nombre,' ',e.apellido) empleado,e.identificacion,ca.nombre cargo, concat(c.nombre,' ',c.apellido) cliente,c.identificacion cidentificacion,r.nombre rubro,r.valor * 0.6 lavadero,r.valor * 0.4 vempleado ,a.matricula from Servicio s inner join Empleado e on e.id=s.id_empleado inner join Cliente c on c.id =s.id_cliente inner join Rubro r on r.id = s.id_rubro inner join Cargo ca on c.id = e.id_cargo inner join Automotor a on a.id=s.id_automotor where s.fecha_servicio  >= '".$fechaInicial."  00:00:00' group by s.id ORDER BY `s`.`id` ASC";
         
        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
        $con->execute();

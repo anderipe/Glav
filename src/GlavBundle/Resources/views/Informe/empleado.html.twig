@@ -12,7 +12,19 @@
 
                                             
          <input type="date" id="fecha_final" name="fecha_final" />                                             <br>
-                                           <button type="submit" class="btn btn-primary">Guardar</button>
+                                           <button type="submit" class="btn btn-primary">Generar</button>
+                                            <br>
+		</form>
+        
+         <h1>Informes de excel</h1>
+         
+          <form action="{{ path('excel') }}" method="post" enctype="multipart/form-data" >
+         </br>
+         Fecha de Inicio de reporte                                           <br>
+
+         <input type="date" id="inicio" name="inicio"/>
+                                           <br>
+                                           <button type="submit" class="btn btn-primary">Generar</button>
                                             <br>
 		</form>
 
