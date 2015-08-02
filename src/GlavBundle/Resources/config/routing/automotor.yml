@@ -28,3 +28,7 @@ automotor_delete:
     path:     /{id}/delete
     defaults: { _controller: "GlavBundle:Automotor:delete" }
     methods:  [POST, DELETE]
+    
+automotor_servicio:
+    path:     /servicio
+    defaults: { _controller: "GlavBundle:Automotor:servicio" }

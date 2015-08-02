@@ -238,4 +238,32 @@ class AutomotorController extends Controller
             ->getForm()
         ;
     }
+    
+    public function servicioAction(Request $request)
+    {
+        
+        //echo 'cuando';exit();   
+        //print_r($request->get('matricula'));exit();    
+        $matricula =  $request->get('matriculaAutomotor');
+        //$matricula =  'hhh';
+
+        $modelo = "General";
+        //$matricula = "quemada";
+        $entity = new Automotor();
+        $form = $this->createCreateForm($entity);
+        $form->handleRequest($request);
+
+            $em = $this->getDoctrine()->getManager();
+            $TipoAutomotor = $em->getRepository('GlavBundle:TipoAutomotor')->find(1);
+            $entity->setIdTipoAutomotor($TipoAutomotor);
+            $entity->setMatricula($matricula);
+            $entity->setModelo($modelo);
+            $em->persist($entity);
+            $em->flush();
+
+        echo 'Se guardo Correctamente el automotor con matricula '.$matricula;exit();    
+        return $matricula;
+        
+    }
+    
 }

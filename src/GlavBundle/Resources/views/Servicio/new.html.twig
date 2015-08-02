@@ -1,11 +1,24 @@
 {% trans_default_domain 'GlavBundle' %}
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
-
-
 {% block infoUserTop %}
-
+    
     <h1>Registrar Servicio</h1>
+    
+   <input type="button" id="enviar" name="enviar" value="Agregar Vehiculo">
+    </br>
+        </br>
+
+    <div id="vehiculo" style="display:none">
+            <form role="form" name="form" id="form">
+                <input type="hidden" id="marca" name="marca" value="General">
+                Placa
+                <input type="text" id="matriculaAutomotor" name="matriculaAutomotor" ></br></br>
+                <input type="button" id="guardar" name="guardar" value="Guardar" onclick="guardarVehiculo()" class="btn btn-default"/>
+                </br>  </br>
+            </form>
+    </div>
+    
     {{ form(form) }}
 
 
@@ -18,4 +31,8 @@
     </li>
 </ul>
 
+
+
 {% endblock %}
+
+

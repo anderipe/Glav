@@ -467,6 +467,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_automotor_delete:
 
+            // automotor_servicio
+            if ($pathinfo === '/automotor/servicio') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\AutomotorController::servicioAction',  '_route' => 'automotor_servicio',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/rubro')) {

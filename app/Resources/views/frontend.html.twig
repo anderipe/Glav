@@ -1147,12 +1147,22 @@
     <script src="{{ asset("frontend/js/retina.js") }}"></script>
     <script src="{{ asset("frontend/js/custom.js") }}"></script>
         
-    <script type="text/javascript">
+<script type="text/javascript">
+
+function guardarVehiculo()
+{
+            $('#vehiculo').load('{{ path('automotor_servicio') }}',{matriculaAutomotor:matriculaAutomotor},function()
+            {
+
+            });
+            location.reload();
+            alert('Se guardo el automotor');
+} 
+
 
 window.onload = function() {
 
 $('#example').DataTable();
-
 
 $('#cliente').change(function () {
 
@@ -1160,9 +1170,7 @@ $('#cliente').change(function () {
         alert(cliente);
         $('#informacion').load('{{ path('factura_buscar_cliente') }}',{cliente:cliente},function()
             {
-            });
-        
-        
+            });        
 });
 
 $('#matricula').change(function () {
@@ -1208,9 +1216,12 @@ $('#matricula').change(function () {
 
 
 
-    
+$( "#enviar" ).click(function() {
+  //alert( "Handler for .click() called." );
+  vehiculo.style.display = "block";
+});
 
-
+ 
 }
 </script>
     	<!-- end: JavaScript-->
