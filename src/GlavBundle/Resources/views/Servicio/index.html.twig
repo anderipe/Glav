@@ -17,9 +17,9 @@
 
         <thead>
             <tr>
-             
-                <th>Matricula</th>
                 <th>Empleado</th>
+                <th>Matricula</th>
+                <th>Costo</th>
                 <th>Estado</th>
                 <th>Servicio</th>
                 <th>Entrega</th>
@@ -29,9 +29,9 @@
         </thead>
         <tfoot>
             <tr>
-                
-                <th>Matricula</th>
                 <th>Empleado</th>
+                <th>Matricula</th>
+                <th>Costo</th>
                 <th>Estado</th>
                 <th>Servicio</th>
                 <th>Entrega</th>
@@ -42,9 +42,9 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-              
-                <td>{{ entity.matricula }}</td>
                 <td>{{ entity.empleado }}</td>
+                <td>{{ entity.matricula }}</td>
+                <td>{{ entity.valor }}</td>
                 <td>{{ entity.estado_servicio }}</td>
                 <td>{% if entity.fecha_servicio %}{{ entity.fecha_servicio|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.fecha_entrega %}{{ entity.fecha_entrega|date('Y-m-d H:i:s') }}{% endif %}</td>

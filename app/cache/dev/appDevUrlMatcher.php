@@ -880,6 +880,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::informeClienteAction',  '_route' => 'cliente_factura',);
             }
 
+            // excel_cliente
+            if ($pathinfo === '/informe/excelEmpleado') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::excelEmpleadoAction',  '_route' => 'excel_cliente',);
+            }
+
         }
 
         // homepage

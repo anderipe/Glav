@@ -16,6 +16,24 @@
                                             <br>
 		</form>
         
+         <h1>Informes de empleados Diario Excel</h1>
+        <form action="{{ path('excel_cliente') }}" method="post" enctype="multipart/form-data" >
+         </br>
+         Fecha de Inicio de reporte                                           <br>
+
+         <input type="date" id="fecha_iniciale" name="fecha_iniciale"/>
+                                            <br>
+         Fecha final de reporte                                            <br>
+
+                                            
+         <input type="date" id="fecha_finale" name="fecha_finale" />                                             <br>
+                                           <button type="submit" class="btn btn-primary">Generar</button>
+                                            <br>
+		</form>
+        
+        
+
+        
          <h1>Informes de excel</h1>
          
           <form action="{{ path('excel') }}" method="post" enctype="multipart/form-data" >

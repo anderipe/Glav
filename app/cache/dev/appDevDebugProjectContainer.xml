@@ -461,7 +461,7 @@
     <parameter key="assetic.write_to">/home/codio/workspace/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
-    <parameter key="assetic.node.bin">/usr/bin/node</parameter>
+    <parameter key="assetic.node.bin">/home/codio/.nvm/v0.10.25/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/home/codio/.rbenv/versions/2.0.0-p353/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/local/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
@@ -3508,7 +3508,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>55b1b6348d58a</argument>
+            <argument>55bd76934876d</argument>
           </service>
         </argument>
       </argument>
@@ -3831,7 +3831,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>55b1b6348d58a</argument>
+            <argument>55bd76934876d</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>

@@ -25,3 +25,9 @@ cliente_consultar:
 cliente_factura:
     path:     /factura
     defaults: { _controller: "GlavBundle:Informe:informeCliente" }
+    
+excel_cliente:
+    path:     /excelEmpleado
+    defaults: { _controller: "GlavBundle:Informe:excelEmpleado" }
+    
+    

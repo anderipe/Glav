@@ -276,5 +276,114 @@ and s.estado_servicio = 'Finalizado'";
         
         
     }
-    
+    public function excelEmpleadoAction(Request $datos){
+        //echo 'hola';exit();
+        $phpExcelObject = $this->get('phpexcel')->createPHPExcelObject();
+        $user = $this->getUser()->getUsername(); 
+       $phpExcelObject->getProperties()->setCreator($user)
+           //->setLastModifiedBy("Giulio De Donato")
+           ->setTitle("Historial de Servicios")
+           ->setSubject("Historial de Servicios")
+           ->setDescription("Test document for Office 2005 XLSX, generated using PHP classes.")
+           ->setKeywords("office 2005 openxml php")
+           ->setCategory("Test result file");
+        
+        
+        $fechaInicial =  $datos->get('fecha_iniciale');
+        $fechaFinal =   $datos->get('fecha_finale');
+                
+        $sql="select e.id, concat(e.nombre, ' ',e.apellido ) as empleado,a.matricula ,r.valor,sum(p.valor) as prestamo
+        from Servicio s 
+        inner join Automotor a on a.id= s.id_automotor 
+        inner join Empleado e on e.id = s.id_empleado
+        inner join Rubro r on r.id= s.id_rubro
+        left join Prestamo p on p.id_empleado = e.id
+        where s.estado_servicio = 'Finalizado' and s.pago = 'Pendiente' and
+        s.fecha_servicio >= '".$fechaInicial."  00:00:00' and s.fecha_servicio <=  '".$fechaFinal."  23:59:59 and p.estado=1'
+        group by s.id
+        order by e.nombre";
+
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        
+        $cantidad = 'inicial';
+        $prestamo = 'cero';
+        $total = 0;
+        $neto = 0;
+        $i = 1;
+        
+        
+        $phpExcelObject->setActiveSheetIndex(0)
+           ->setCellValue('A1', 'empleado')
+           ->setCellValue('B1', 'matricula')
+           ->setCellValue('C1', 'valor')
+           ->setCellValue('D1', 'prestamo')
+           ->setCellValue('E1', 'neto');
+
+
+
+
+
+
+       $phpExcelObject->getActiveSheet()->setTitle('Simple');
+       
+   $i = 2;  
+   $usuario = array();
+   $idUser = 0;
+   foreach ($entities as $entitie) 
+   {
+       if($idUser == $entitie['id'])
+       {
+           $usuario[] = $entitie;
+       }
+       else
+       {
+           if($idUser != 0)
+           {
+               $suma = 0;
+               for($c = 0; $c < count($usuario); $c++)
+               {
+                   $suma += $usuario[$c]['valor'];
+                   $neto = ($suma - $usuario[$c]['prestamo'])*0.4;
+                   $phpExcelObject->setActiveSheetIndex(0)
+                   ->setCellValue('A'.$i, $usuario[$c]['empleado'])
+                   ->setCellValue('B'.$i, $usuario[$c]['matricula'])
+                   ->setCellValue('C'.$i, $usuario[$c]['valor'])
+                   ->setCellValue('D'.$i, $usuario[$c]['prestamo'])
+                   ->setCellValue('G'.$i, "");
+                   $i++;
+               }
+               $phpExcelObject->setActiveSheetIndex(0)
+                   ->setCellValue('A'.$i, "")
+                   ->setCellValue('B'.$i, "Total")
+                   ->setCellValue('C'.$i, $suma)
+                   ->setCellValue('D'.$i, "Neto")
+                   ->setCellValue('E'.$i, $neto);
+               $i++;
+           }
+           $usuario = array();
+           $usuario[] = $entitie;
+           $idUser =  $entitie['id'];
+       }
+       $phpExcelObject->getActiveSheet()->setTitle('Simple');
+       //$i++;
+    }  
+       // Set active sheet index to the first sheet, so Excel opens this as the first sheet
+       $phpExcelObject->setActiveSheetIndex(0);
+
+        // create the writer
+        $writer = $this->get('phpexcel')->createWriter($phpExcelObject, 'Excel5');
+        // create the response
+        $response = $this->get('phpexcel')->createStreamedResponse($writer);
+        // adding headers
+        $response->headers->set('Content-Type', 'text/vnd.ms-excel; charset=utf-8');
+        $response->headers->set('Content-Disposition', 'attachment;filename=Servicios.xls');
+        $response->headers->set('Pragma', 'public');
+        $response->headers->set('Cache-Control', 'maxage=1');
+
+        return $response; 
+        
+
+    }
 }

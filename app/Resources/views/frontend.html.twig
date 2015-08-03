@@ -1149,20 +1149,38 @@
         
 <script type="text/javascript">
 
-function guardarVehiculo()
+
+
+
+window.onload = function() 
 {
-            $('#vehiculo').load('{{ path('automotor_servicio') }}',{matriculaAutomotor:matriculaAutomotor},function()
-            {
-
-            });
+    
+    $("#guardar").click(function()
+    {
+        console.log("Ingresa" + $("#matriculaAutomotor").val());
+        //( "#result" ).load( "ajax/test.html" );
+       
+        $('#vehiculo').load('{{ path('automotor_servicio') }}',{matriculaAutomotor:$("#matriculaAutomotor").val()}, function()
+        {
             location.reload();
-            alert('Se guardo el automotor');
-} 
-
-
-window.onload = function() {
-
-$('#example').DataTable();
+            console.log('Se guardo el automotor');
+        });
+       
+    });
+    
+    /*
+    guardarvehiculo = function ()
+    {
+        $('#vehiculo').load('{{ path('automotor_servicio') }}',{matriculaAutomotor:matriculaAutomotor}, function()
+        {
+        
+        });
+        location.reload();
+        alert('Se guardo el automotor');
+    } 
+    */
+    
+    $('#example').DataTable();
 
 $('#cliente').change(function () {
 
@@ -1178,10 +1196,9 @@ $('#matricula').change(function () {
         matricula = $('#matricula').val();
         alert(matricula);
         $('#informacion').load('{{ path('servicio_buscar_matricula') }}',{matricula:matricula},function()
-            {
-            });
-        
-        
+        {
+            
+        });
 });
 
     $('#glavbundle_prestamo_id_empleado').on('change', function() {
@@ -1220,6 +1237,20 @@ $( "#enviar" ).click(function() {
   //alert( "Handler for .click() called." );
   vehiculo.style.display = "block";
 });
+
+$( "#prueba" ).click(function() {
+  
+  
+              $('#vehiculo').load('{{ path('automotor_servicio') }}',{placa:placa},function()
+            {
+
+            });
+            location.reload();
+            alert('Se guardo el automotor');
+            
+            
+});
+
 
  
 }
