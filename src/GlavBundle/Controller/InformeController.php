@@ -319,12 +319,7 @@ and s.estado_servicio = 'Finalizado'";
            ->setCellValue('B1', 'matricula')
            ->setCellValue('C1', 'valor')
            ->setCellValue('D1', 'prestamo')
-           ->setCellValue('E1', 'neto');
-
-
-
-
-
+           ->setCellValue('E1', '');
 
        $phpExcelObject->getActiveSheet()->setTitle('Simple');
        
@@ -346,6 +341,7 @@ and s.estado_servicio = 'Finalizado'";
                {
                    $suma += $usuario[$c]['valor'];
                    $neto = ($suma - $usuario[$c]['prestamo'])*0.4;
+                   
                    $phpExcelObject->setActiveSheetIndex(0)
                    ->setCellValue('A'.$i, $usuario[$c]['empleado'])
                    ->setCellValue('B'.$i, $usuario[$c]['matricula'])
@@ -356,19 +352,36 @@ and s.estado_servicio = 'Finalizado'";
                }
                $phpExcelObject->setActiveSheetIndex(0)
                    ->setCellValue('A'.$i, "")
-                   ->setCellValue('B'.$i, "Total")
+                   ->setCellValue('B'.$i, "Comisión negocio")
                    ->setCellValue('C'.$i, $suma)
-                   ->setCellValue('D'.$i, "Neto")
+                   ->setCellValue('D'.$i, "Comisión empleado")
                    ->setCellValue('E'.$i, $neto);
+                    $total += $suma; 
+               $i++;
+               $phpExcelObject->setActiveSheetIndex(0)
+                   ->setCellValue('A'.$i, "")
+                   ->setCellValue('B'.$i, "")
+                   ->setCellValue('C'.$i, "")
+                   ->setCellValue('D'.$i, "")
+                   ->setCellValue('E'.$i, "");
                $i++;
            }
            $usuario = array();
            $usuario[] = $entitie;
            $idUser =  $entitie['id'];
        }
-       $phpExcelObject->getActiveSheet()->setTitle('Simple');
+       //$phpExcelObject->getActiveSheet()->setTitle('Simple');
        //$i++;
     }  
+        
+                   $phpExcelObject->setActiveSheetIndex(0)
+                   ->setCellValue('A'.$i, "")
+                   ->setCellValue('B'.$i, "Total negocio")
+                   ->setCellValue('C'.$i, $total)
+                   ->setCellValue('D'.$i, "Total empleados")
+                   ->setCellValue('E'.$i, ($total * 0.4));
+               $i++;
+       $phpExcelObject->getActiveSheet()->setTitle('Simple');
        // Set active sheet index to the first sheet, so Excel opens this as the first sheet
        $phpExcelObject->setActiveSheetIndex(0);
 
@@ -387,3 +400,4 @@ and s.estado_servicio = 'Finalizado'";
 
     }
 }
+
